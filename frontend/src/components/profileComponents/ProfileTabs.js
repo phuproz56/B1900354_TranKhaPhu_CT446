@@ -81,10 +81,10 @@ const ProfileTabs = () => {
             />
           </div>
         </div>
-        <div className="col-md-12">
+        {/* <div className="col-md-12">
            <h3>Đổi mật khẩu</h3>
-        </div>
-        <div className="col-md-6">
+        </div> */}
+        {/* <div className="col-md-6">
           <div className="form">
             <label for="account-pass">Mật khẩu mới</label>
             <input
@@ -94,8 +94,8 @@ const ProfileTabs = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-        </div>
-        <div className="col-md-6">
+        </div> */}
+        {/* <div className="col-md-6">
           <div className="form">
             <label for="account-confirm-pass">Xác nhận mật khẩu</label>
             <input
@@ -105,8 +105,8 @@ const ProfileTabs = () => {
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
-        </div>
-        <button type="submit">CẬP NHẬT</button>
+        </div> */}
+        {/* <button type="submit">CẬP NHẬT</button> */}
       </form>
     </>
   );

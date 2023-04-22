@@ -47,7 +47,7 @@ const ProfileScreen = () => {
             <div className="wizard pt-3 ">
               <div class="d-flex align-items-start">
                 <div
-                  class="nav align-items-start flex-column col-12 nav-pills me-3 "
+                  class="nav align-items-start flex-column col-12 nav-pills me-3"
                   id="v-pills-tab"
                   role="tablist"
                   aria-orientation="vertical"

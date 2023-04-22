@@ -7,7 +7,7 @@ import { addToCart, removefromcart } from "./../Redux/Actions/cartActions";
 const CartScreen = ({ match, location, history }) => {
   window.scrollTo(0, 0);
   const dispatch = useDispatch();
-  const productId = match.params.id;
+const productId = match.params.id;
   const qty = location.search ? String(location.search.split("=")[1].split("&")[0]) : 1;
   const color = location.search ? String(location.search.split("&")[1].split("=")[1]) : 1;
   const size = location.search ? String(location.search.split("=")[3]) : 1;

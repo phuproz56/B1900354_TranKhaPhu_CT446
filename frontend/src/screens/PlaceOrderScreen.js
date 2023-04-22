@@ -90,7 +90,7 @@ const PlaceOrderScreen = ({ history }) => {
                   <strong>Thông tin đơn hàng</strong>
                 </h5>
                 <p>Shipping: {cart.shippingAddress.country}</p>
-                <p>Pahương thức thanh toán: {cart.paymentMethod}</p>
+                <p>Phương thức thanh toán: {cart.paymentMethod}</p>
               </div>
             </div>
           </div>

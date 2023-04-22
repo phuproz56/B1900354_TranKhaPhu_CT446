@@ -18,7 +18,6 @@ import PrivateRouter from "./PrivateRouter";
 import { Fragment } from 'react';
 import ScrollButton from './components/scrollButton';
 
-
 const App = () => {
   return (
     <Router>

@@ -54,7 +54,7 @@ const Sidebar = () => {
                 <span className="text">Thêm sản phẩm</span>
               </NavLink>
             </li>
-            <li className="menu-item">
+            {/* <li className="menu-item">
               <NavLink
                 activeClassName="active"
                 className="menu-link"
@@ -63,7 +63,7 @@ const Sidebar = () => {
                 <i className="icon fas fa-list"></i>
                 <span className="text">Thể loại</span>
               </NavLink>
-            </li>
+            </li> */}
             <li className="menu-item">
               <NavLink
                 activeClassName="active"
@@ -84,7 +84,7 @@ const Sidebar = () => {
                 <span className="text">Người dùng</span>
               </NavLink>
             </li>
-            <li className="menu-item">
+            {/* <li className="menu-item">
               <NavLink
                 activeClassName="active"
                 className="menu-link disabled"
@@ -93,9 +93,9 @@ const Sidebar = () => {
                 <i className="icon fas fa-store-alt"></i>
                 <span className="text">Người bán</span>
               </NavLink>
-            </li>
+            </li> */}
 
-            <li className="menu-item">
+            {/* <li className="menu-item">
               <NavLink
                 activeClassName="active"
                 className="menu-link disabled"
@@ -104,7 +104,7 @@ const Sidebar = () => {
                 <i className="icon fas fa-usd-circle"></i>
                 <span className="text">Giao dịch</span>
               </NavLink>
-            </li>
+            </li> */}
           </ul>
           <br />
           <br />
