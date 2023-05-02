@@ -78,14 +78,14 @@ const Header = () => {
             </Link>
           </li>
           <li className="dropdown nav-item">
-            <Link className="dropdown-toggle" data-bs-toggle="dropdown" to="#">
+            <Link  data-bs-toggle="dropdown" to="#">
               <img
                 className="img-xs rounded-circle"
                 src="/images/favicon.png"
                 alt="User"
               />
             </Link>
-            <div className="dropdown-menu dropdown-menu-end">
+            {/* <div className="dropdown-menu dropdown-menu-end">
               <Link className="dropdown-item" to="/profile">
                 My profile
               </Link>
@@ -99,7 +99,7 @@ const Header = () => {
               >
                 Exit
               </Link>
-            </div>
+            </div> */}
           </li>
         </ul>
       </div>

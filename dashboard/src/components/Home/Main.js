@@ -4,6 +4,7 @@ import LatestOrder from "./LatestOrder";
 import SaleStatistics from "./SalesStatistics";
 import ProductsStatistics from "./ProductsStatistics";
 import { useSelector } from "react-redux";
+import SalesStatisticsYear from "./SalesStatisticsYear";
 
 const Main = () => {
   const orderList = useSelector((state) => state.orderList);
@@ -23,6 +24,7 @@ const Main = () => {
           {/* STATICS */}
           <SaleStatistics />
           <ProductsStatistics />
+          <SalesStatisticsYear/>
         </div>
 
         {/* LATEST ORDER */}

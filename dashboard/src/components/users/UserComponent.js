@@ -19,9 +19,9 @@ const UserComponent = () => {
       <div className="content-header">
         <h2 className="content-title">Người dùng</h2>
         <div>
-          <Link to="#" className="btn btn-primary">
+          {/* <Link to="#" className="btn btn-primary">
             <i className="material-icons md-plus"></i> Thêm người dùng
-          </Link>
+          </Link> */}
         </div>
       </div>
 
