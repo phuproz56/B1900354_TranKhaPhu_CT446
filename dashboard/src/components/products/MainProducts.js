@@ -1,10 +1,14 @@
-import React, { useEffect } from "react";
+
+
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Product from "./Product";
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../../Redux/Actions/ProductActions";
 import Loading from "../LoadingError/Loading";
 import Message from "../LoadingError/Error";
+import ReactPaginate from "react-paginate";
+
 
 const MainProducts = () => {
   const dispatch = useDispatch();
@@ -15,9 +19,21 @@ const MainProducts = () => {
   const productDelete = useSelector((state) => state.productDelete);
   const { error: errorDelete, success: successDelete } = productDelete;
 
+  const [currentPage, setCurrentPage] = useState(0);
+  const [productsPerPage] = useState(8);
+
   useEffect(() => {
     dispatch(listProducts());
   }, [dispatch, successDelete]);
+
+  // Logic phân trang
+  const offset = currentPage * productsPerPage;
+  const pageCount = Math.ceil(products.length / productsPerPage);
+  const currentProducts = products.slice(offset, offset + productsPerPage);
+
+  const handlePageClick = ({ selected: selectedPage }) => {
+    setCurrentPage(selectedPage);
+  };
 
   return (
     <section className="content-main">
@@ -31,33 +47,6 @@ const MainProducts = () => {
       </div>
 
       <div className="card mb-4 shadow-sm">
-        <header className="card-header bg-white ">
-          <div className="row gx-3 py-3">
-            <div className="col-lg-4 col-md-6 me-auto ">
-              <input
-                type="search"
-                placeholder="Search..."
-                className="form-control p-2"
-              />
-            </div>
-            <div className="col-lg-2 col-6 col-md-3">
-              <select className="form-select">
-                <option>Tất cả</option>
-                <option>Thời trang nam</option>
-                <option>Thời trang nữ</option>
-                <option>Thời trang trẻ em</option>
-              </select>
-            </div>
-            <div className="col-lg-2 col-6 col-md-3">
-              <select className="form-select">
-                <option>Mới nhất</option>
-                <option>rẻ nhất</option>
-                <option>Được đánh giá cao</option>
-              </select>
-            </div>
-          </div>
-        </header>
-
         <div className="card-body">
           {errorDelete && (
             <Message variant="alert-danger">{errorDelete}</Message>
@@ -67,43 +56,41 @@ const MainProducts = () => {
           ) : error ? (
             <Message variant="alert-danger">{error}</Message>
           ) : (
-            <div className="row">
-              {/* Products */}
-              {products.map((product) => (
-                <Product product={product} key={product._id} />
-              ))}
-            </div>
+            <>
+              <div className="row">
+                {/* Products */}
+                {currentProducts.map((product) => (
+                  <Product product={product} key={product._id} />
+                ))}
+              </div>
+              {/* Pagination */}
+              {/* <ReactPaginate
+                previousLabel={"Previous"}
+                nextLabel={"Next"}
+                pageCount={pageCount}
+                onPageChange={handlePageClick}
+                containerClassName={"pagination"}
+                previousLinkClassName={"pagination__link"}
+                nextLinkClassName={"pagination__link"}
+                disabledClassName={"pagination__link--disabled"}
+                activeClassName={"pagination__link--active"}
+              /> */}
+              <ReactPaginate
+                previousLabel={'«'}
+                nextLabel={'»'}
+                pageCount={pageCount}
+                onPageChange={({ selected }) => setCurrentPage(selected)}
+                containerClassName={'pagination'}
+                activeClassName={'active'}
+                pageClassName={'page-item'}
+                previousClassName={'page-item'}
+                nextClassName={'page-item'}
+                pageLinkClassName={'page-link'}
+                previousLinkClassName={'page-link'}
+                nextLinkClassName={'page-link'}
+                />
+            </>
           )}
-
-          <nav className="float-end mt-4" aria-label="Page navigation">
-            <ul className="pagination">
-              <li className="page-item disabled">
-                <Link className="page-link" to="#">
-                  Trước
-                </Link>
-              </li>
-              <li className="page-item active">
-                <Link className="page-link" to="#">
-                  1
-                </Link>
-              </li>
-              <li className="page-item">
-                <Link className="page-link" to="#">
-                  2
-                </Link>
-              </li>
-              <li className="page-item">
-                <Link className="page-link" to="#">
-                  3
-                </Link>
-              </li>
-              <li className="page-item">
-                <Link className="page-link" to="#">
-                  Tiếp theo
-                </Link>
-              </li>
-            </ul>
-          </nav>
         </div>
       </div>
     </section>

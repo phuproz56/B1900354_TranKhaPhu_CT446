@@ -15,32 +15,7 @@ const OrderMain = () => {
       </div>
 
       <div className="card mb-4 shadow-sm">
-        <header className="card-header bg-white">
-          <div className="row gx-3 py-3">
-            <div className="col-lg-4 col-md-6 me-auto">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="form-control p-2"
-              />
-            </div>
-            <div className="col-lg-2 col-6 col-md-3">
-              <select className="form-select">
-                <option>Trạng thái</option>
-                <option>Đã xác nhận</option>
-                <option>Từ chối</option>
-                <option>Hiển thị tất cả</option>
-              </select>
-            </div>
-            <div className="col-lg-2 col-6 col-md-3">
-              <select className="form-select">
-                <option>Hiển thị 20</option>
-                <option>Hiển thị 30</option>
-                <option>Hiển thị 40</option>
-              </select>
-            </div>
-          </div>
-        </header>
+        
         <div className="card-body">
           <div className="table-responsive">
             {loading ? (

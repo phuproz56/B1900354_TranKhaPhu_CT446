@@ -88,6 +88,44 @@ a.disabled {
   font-size: 28px;
 }
 
+/* css pagination */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.pagination__link {
+  color: #333;
+  padding: 10px;
+  margin: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+
+}
+
+.pagination__link:hover {
+  background-color: #eee;
+}
+
+.pagination__link--active {
+  background-color: #333;
+  color: #fff;
+  padding: 0 10px;
+  margin: 0 10px;
+  border-color: #333;
+  border-radius: 50%;
+  
+}
+.pagination__link--disabled {
+  
+}
+
+/* pagination end */
+
 .icon-lg {
   width: 96px;
   height: 96px;

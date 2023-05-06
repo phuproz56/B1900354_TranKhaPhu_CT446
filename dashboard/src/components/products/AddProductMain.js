@@ -101,7 +101,7 @@ const AddProductMain = () => {
                   {loading && <Loading />}
                   <div className="mb-4">
                     <label htmlFor="product_title" className="form-label">
-                      Tiêu đề
+                      Tên sản phẩm
                     </label>
                     <input
                       type="text"
